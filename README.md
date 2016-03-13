@@ -3,6 +3,8 @@
 This is an example of the binding to the *sms cordova plugin*. See the
 binding [here](https://github.com/dannywillems/ocaml-cordova-plugin-sms)
 
+**In development**
+
 ## How to compile ?
 
 Read the section 'Using js_of_ocaml to develop in OCaml on mobile' first.
