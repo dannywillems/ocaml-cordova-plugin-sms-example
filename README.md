@@ -9,12 +9,16 @@ binding [here](https://github.com/dannywillems/ocaml-cordova-plugin-sms)
 
 Read the section 'Using js_of_ocaml to develop in OCaml on mobile' first.
 
-Create a hook and www directory to have a cordova project structure (these
-directories are removed because they're not useful for this dev process):
+First, you need to pin
+[cordova-plugin-sms](https://github.com/dannywillems/ocaml-cordova-plugin-sms)
+and
+[cordova-plugin-dialogs](https://github.com/dannywillems/ocaml-cordova-plugin-dialogs).
 
+After that, you can initialize the project with
 ```Makefile
-mkdir hooks www
+make init
 ```
+It will install all dependancies and create the project structure.
 
 Add your platform:
 ```Makefile
@@ -22,12 +26,6 @@ Add your platform:
 make add_ios
 # android
 make add_android
-```
-
-You need to install the plugin *cordova-plugin-device*. The Makefile contains
-a target to do it. Use
-```Makefile
-make init_plugins
 ```
 
 Build the archive for your platform:
