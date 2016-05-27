@@ -1,4 +1,4 @@
-let on_device_ready _ =
+let on_device_ready () =
   let s = Cordova_sms.t () in
   let dialog = Cordova_dialogs.t () in
 
@@ -27,7 +27,7 @@ let on_device_ready _ =
       else
         s#send ~num:num ~msg:msg ~succ_cb:succ ~err_cb:err ();
       Js._false
-  );
+  )
 
   (*
   ignore
@@ -47,8 +47,5 @@ let on_device_ready _ =
     );
   );
   *)
-  Js._false
 
-let _ =
-  Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
-(Dom_html.handler on_device_ready) Js._false
+let _ = Cordova.Event.device_ready on_device_ready
