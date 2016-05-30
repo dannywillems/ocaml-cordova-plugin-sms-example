@@ -1,5 +1,4 @@
 let on_device_ready () =
-  let s = Cordova_sms.t () in
   let dialog = Cordova_dialogs.t () in
 
   let num_node = Jsoo_lib.get_input_by_id "num" in
@@ -25,7 +24,7 @@ let on_device_ready () =
       else if msg = "" then
         dialog#alert "Please enter a message." ~title:"Missing field" ()
       else
-        s#send ~num:num ~msg:msg ~succ_cb:succ ~err_cb:err ();
+        Cordova_sms.send ~num:num ~msg:msg ~succ_cb:succ ~err_cb:err ();
       Js._false
   )
 
